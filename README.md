@@ -2,7 +2,7 @@
 
 Many apps and scripts need the ability to ping the blockchain for some data. The setup for even the smallest amount of data can be frustratingly time consuming — providers, ABIs, contract objects, etc.
 
-Token Ping takes care of all of this so you can get a contract instance ready to be queried in one line of code.
+Token Ping takes care of this for a few common token standards so you can get a contract instance ready to be queried in one line of code.
 
 ## Quick Start
 
