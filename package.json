@@ -1,0 +1,29 @@
+{
+  "name": "token-ping",
+  "version": "1.0.0",
+  "description": "An npm package for easily querying ERC20, ERC721, or ERC1155 data with no setup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zobront/token-ping.git"
+  },
+  "keywords": [
+    "erc20",
+    "erc721",
+    "erc115",
+    "ethereum",
+    "nft"
+  ],
+  "author": "Zach Obront",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zobront/token-ping/issues"
+  },
+  "homepage": "https://github.com/zobront/token-ping#readme",
+  "dependencies": {
+    "ethers": "^5.5.4"
+  }
+}
