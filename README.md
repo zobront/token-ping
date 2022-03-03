@@ -11,9 +11,9 @@ Token Ping takes care of all of this so you can get a contract instance ready to
 3. Plug in the address to get a contract instance, with `const contract = ERC20("0x...")`
 4. Call any view function on the contract, for example `const nftOwner = await contract.ownerOf(0)`
 
-## Function Paramters
+## Function Parameters
 
-There are three functions available for import: ERC20, ERC721, and ERC1155.
+There are three functions available for import: ERC20(), ERC721(), and ERC1155().
 
 Each of the functions take 1 required argument and 2 optional arguments:
 
