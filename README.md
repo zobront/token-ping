@@ -23,7 +23,7 @@ Each of the functions take 1 required argument and 2 optional arguments:
 
 ## ERC20 Methods
 
-All view methods on the ERC20 standard will be available on your contract instance.
+All external view methods on the ERC20 standard will be available on your contract instance.
 
 - function name() public view returns (string memory);
 - function symbol() public view returns (string memory);
@@ -32,10 +32,31 @@ All view methods on the ERC20 standard will be available on your contract instan
 - function balanceOf(address account) public view returns (uint256);
 - function allowance(address owner, address spender) public view returns (uint256);
 
-Note: If you add a signer as an argument when constructing the contract instance, you'll be able to access all methods. See the (OpenZeppelin ERC20 implementation)[https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol] for the list of methods available.
+Note: If you add a signer as an argument when constructing the contract instance, you'll be able to access all methods. See the [OpenZeppelin ERC20 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol) for the full list of methods available.
 
 ## ERC721 Methods
+
+All external view methods on the ERC721 standard will be available on your contract instance.
+
+- function supportsInterface(bytes4 interfaceId) public view returns (bool);
+- function balanceOf(address owner) public view returns (uint256);
+- function ownerOf(uint256 tokenId) public view returns (address);
+- function name() public view returns (string memory);
+- function symbol() public view returns (string memory);
+- function tokenURI(uint256 tokenId) public view returns (string memory);
+- function getApproved(uint256 tokenId) public view returns (address);
+
+Note: If you add a signer as an argument when constructing the contract instance, you'll be able to access all methods. See the [OpenZeppelin ERC721 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol) for the full list of methods available.
 
 
 ## ERC1155 Methods
 
+All external view methods on the ERC1155 standard will be available on your contract instance.
+
+- function supportsInterface(bytes4 interfaceId) public view returns (bool);
+- function uri(uint256) public view returns (string memory);
+- function balanceOf(address account, uint256 id) public view returns (uint256);
+- function balanceOfBatch(address[] memory accounts, uint256[] memory ids) public view returns (uint256[] memory);
+- function isApprovedForAll(address account, address operator) public view returns (bool);
+ 
+ Note: If you add a signer as an argument when constructing the contract instance, you'll be able to access all methods. See the [OpenZeppelin ERC1155 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol) for the full list of methods available.
