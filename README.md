@@ -2,7 +2,7 @@
 
 Many apps and scripts need the ability to ping the blockchain for some data. The setup for even the smallest amount of data can be frustratingly time consuming — providers, ABIs, contract objects, etc.
 
-Token Ping takes care of this for a few common token standards so you can get a contract instance ready to be queried in one line of code.
+Token Ping takes care of this for a few common token standards (ERC20, ERC721, and ERC1155) so you can get a contract instance ready to be queried in one line of code.
 
 ## Quick Start
 
@@ -13,13 +13,13 @@ Token Ping takes care of this for a few common token standards so you can get a 
 
 ## Function Parameters
 
-There are three functions available for import: ERC20(), ERC721(), and ERC1155().
+There are three functions available for import: `ERC20()`, `ERC721()`, and `ERC1155()`.
 
 Each of the functions take 1 required argument and 2 optional arguments:
 
-- address (required): The address of the contract you'd like to connect to.
-- providerOrSigner (optional): If you don't want to use the ethersjs default provider, you can create your own and add it here. If you use a signer, the contract instances you create will be able to perform write functions as well as view functions.
-- chainId (optional): The ID of the chain the contract lives on. Defaults to 1 for mainnet
+- `address` (required): The address of the contract you'd like to connect to.
+- `providerOrSigner` (optional): If you don't want to use the ethersjs default provider, you can create your own and add it here. If you use a signer, the contract instances you create will be able to perform write functions as well as view functions.
+- `chainId` (optional): The ID of the chain the contract lives on. Defaults to 1 for mainnet
 
 ## ERC20 Methods
 
