@@ -2,7 +2,7 @@
 
 Many apps and scripts need the ability to ping the blockchain for some data. The setup for even the smallest amount of data can be frustratingly time consuming — providers, ABIs, contract objects, etc.
 
-Token Ping takes care of this for a few common token standards (ERC20, ERC721, and ERC1155) so you can get a contract instance ready to be queried in one line of code.
+Token Ping takes care of this by querying the Etherscan API for the contract ABI, as well as offering a few common token standards (ERC20, ERC721, and ERC1155) so you can get a contract instance ready to be queried in one line of code.
 
 ## Quick Start
 
@@ -13,13 +13,23 @@ Token Ping takes care of this for a few common token standards (ERC20, ERC721, a
 
 ## Function Parameters
 
-There are three functions available for import: `ERC20()`, `ERC721()`, and `ERC1155()`.
+There are four functions available for import: `Contract()`, `ERC20()`, `ERC721()`, and `ERC1155()`.
+
+`Contract()` fetches verified contract ABIs from Etherscan to return a contract object. The other three functions use a local instance of the ABI to create a generic contract.
 
 Each of the functions take 1 required argument and 2 optional arguments:
 
 - `address` (required): The address of the contract you'd like to connect to.
-- `providerOrSigner` (optional): If you don't want to use the ethersjs default provider, you can create your own and add it here. If you use a signer, the contract instances you create will be able to perform transactions as well as view functions.
+- `providerOrSigner` (optional): If you don't want to use the ethersjs default provider, you can create your own and add it here. If you use a signer, the contract instances you create will be able to perform transactions as well as access view functions.
 - `chainId` (optional): The ID of the chain the contract lives on. Defaults to 1 for mainnet
+
+## Contract() Function
+
+The contract function is the most general function. It queries the Etherscan API (available for Mainnet, Rinkeby, and Ropsten) to see if they have a verified contract.
+
+If they do, it serves up a contract instance based on the verified contract ABI, and caches the ABI locally for future calls.
+
+** Note that unlike the other functions, the Contract() function makes a request to an external source. As a result, it returns a promise. **
 
 ## ERC20 Methods
 

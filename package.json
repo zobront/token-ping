@@ -1,6 +1,6 @@
 {
   "name": "token-ping",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "An npm package for easily querying ERC20, ERC721, or ERC1155 data with no setup.",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "erc721",
     "erc115",
     "ethereum",
+    "etherscan",
     "nft"
   ],
   "author": "Zach Obront",
@@ -24,6 +25,9 @@
   },
   "homepage": "https://github.com/zobront/token-ping#readme",
   "dependencies": {
-    "ethers": "^5.5.4"
+    "ethers": "^5.5.4",
+    "jquery": "^3.6.0",
+    "jsdom": "^19.0.0",
+    "token-ping": "^1.0.4"
   }
 }
