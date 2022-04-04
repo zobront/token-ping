@@ -23,7 +23,7 @@ function ERC1155(address, providerOrSigner = null, chainId = 1) {
     return new ethers.Contract(address, abis.ERC1155, providerOrSigner);
 }
 
-function Contract(address, providerOrSigner = null, chainId = 1) {
+function TPContract(address, providerOrSigner = null, chainId = 1) {
     if (![1, 3, 4].includes(chainId)) throw new Error('Unsupported chainId (mainnet, rinkeby, and ropsten only)');
     let chainPrefix = '';
     switch (chainId) {
@@ -46,4 +46,4 @@ function Contract(address, providerOrSigner = null, chainId = 1) {
     });
 }
 
-module.exports = { ERC20, ERC721, ERC1155, Contract }
+module.exports = { ERC20, ERC721, ERC1155, TPContract }

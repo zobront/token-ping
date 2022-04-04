@@ -7,31 +7,31 @@ Token Ping takes care of this by querying the Etherscan API for the contract ABI
 ## Quick Start
 
 1. Install the package with `npm install token-ping`.
-2. Require the function you need into the file with, for example, `const { ERC20 } = require('token-ping');`
-3. Plug in the address to get a contract instance, with `const contract = ERC20("0x...")`
+2. Require the function you need into the file with, for example, `const { ERC721 } = require('token-ping');`
+3. Plug in the address to get a contract instance, with `const contract = ERC721("0x...")`
 4. Call any view function on the contract, for example `const nftOwner = await contract.ownerOf(0)`
 
 ## Function Parameters
 
-There are four functions available for import: `Contract()`, `ERC20()`, `ERC721()`, and `ERC1155()`.
+There are four functions available for import: `TPContract()`, `ERC20()`, `ERC721()`, and `ERC1155()`.
 
-`Contract()` fetches verified contract ABIs from Etherscan to return a contract object. The other three functions use a local instance of the ABI to create a generic contract.
+`TPContract()` fetches verified contract ABIs from Etherscan, returning a promise that resolves to a contract object. The other three functions use a local instance of the ABI to return a generic contract.
 
 Each of the functions take 1 required argument and 2 optional arguments:
 
 - `address` (required): The address of the contract you'd like to connect to.
 - `providerOrSigner` (optional): If you don't want to use the ethersjs default provider, you can create your own and add it here. If you use a signer, the contract instances you create will be able to perform transactions as well as access view functions.
-- `chainId` (optional): The ID of the chain the contract lives on. Defaults to 1 for mainnet
+- `chainId` (optional): The ID of the chain the contract lives on. Defaults to 1 for mainnet, with options for 3 (Ropsten) or 4 (Rinkeby).
 
-## Contract() Function
+## TPContract()
 
-The contract function is the most general function. It queries the Etherscan API (available for Mainnet, Rinkeby, and Ropsten) to see if they have a verified contract.
+The `TPContract()` function is the most general function. It queries the Etherscan API (available for Mainnet, Rinkeby, and Ropsten) to see if they have a verified contract.
 
 If they do, it serves up a contract instance based on the verified contract ABI, and caches the ABI locally for future calls.
 
-** Note that unlike the other functions, the Contract() function makes a request to an external source. As a result, it returns a promise. **
+** Note that unlike the other functions, the TPContract() function returns a promise. **
 
-## ERC20 Methods
+## ERC20() Methods
 
 All external view methods on the ERC20 standard will be available on your contract instance.
 
@@ -44,7 +44,7 @@ All external view methods on the ERC20 standard will be available on your contra
 
 Note: If you add a signer as an argument when constructing the contract instance, you'll be able to access all external methods. See the [OpenZeppelin ERC20 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol) for the full list of methods available.
 
-## ERC721 Methods
+## ERC721() Methods
 
 All external view methods on the ERC721 standard will be available on your contract instance.
 
@@ -59,7 +59,7 @@ All external view methods on the ERC721 standard will be available on your contr
 Note: If you add a signer as an argument when constructing the contract instance, you'll be able to access all external methods. See the [OpenZeppelin ERC721 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol) for the full list of methods available.
 
 
-## ERC1155 Methods
+## ERC1155() Methods
 
 All external view methods on the ERC1155 standard will be available on your contract instance.
 
